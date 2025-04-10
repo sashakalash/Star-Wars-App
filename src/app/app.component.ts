@@ -22,9 +22,7 @@ export class AppComponent {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.isHomeRoute.set(
-          event.urlAfterRedirects === '/movies'
-        );
+        this.isHomeRoute.set(event.urlAfterRedirects === '/movies');
       });
   }
 }

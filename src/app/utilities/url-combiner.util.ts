@@ -7,4 +7,4 @@ export enum RouteType {
 
 export function urlCombiner(id: string, entity: RouteType): string {
   return `${environment.apiUrl}/${entity}/${id}/`;
-};
+}

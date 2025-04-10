@@ -52,18 +52,20 @@ Below is the test coverage summary for the whole project. This data provides ins
 
 For a more detailed breakdown of statements, branches, functions, and lines covered by the test suite, refer to the full coverage report located in the coverage folder at the root of the application.
 
-| Metric       | Coverage Percentage | Covered / Total |
-|--------------|---------------------|-----------------|
-| Statements   | 84.57%             | 148 / 175       |
-| Branches     | 73.91%             | 17 / 23         |
-| Functions    | 83.75%             | 67 / 80         |
-| Lines        | 82.80%             | 130 / 157       |
+| Metric     | Coverage Percentage | Covered / Total |
+| ---------- | ------------------- | --------------- |
+| Statements | 84.57%              | 148 / 175       |
+| Branches   | 73.91%              | 17 / 23         |
+| Functions  | 83.75%              | 67 / 80         |
+| Lines      | 82.80%              | 130 / 157       |
 
 ### Additional Details
+
 - **Total Successful Tests**: `56` (across the project).
 - **Source**: Generated from `ng test` coverage report.
 
 **Run to execute these tests and verify coverage**
+
 ```sh
   ng test --browsers=ChromeHeadless --code-coverage
 ```

@@ -5,6 +5,6 @@ export const environment = {
   api: {
     getMoviesList: 'films',
     getMovieById: 'films/${{id}}',
-    getCharacterById: 'people/${{id}}'
+    getCharacterById: 'people/${{id}}',
   },
 };

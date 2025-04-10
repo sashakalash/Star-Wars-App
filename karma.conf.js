@@ -7,7 +7,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
     ],
     client: {
       jasmine: {},
@@ -25,6 +25,6 @@ module.exports = function (config) {
     browsers: ['ChromeHeadless'],
     restartOnFileChange: true,
     singleRun: false,
-    autoWatch: true
+    autoWatch: true,
   });
 };

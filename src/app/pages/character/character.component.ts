@@ -9,7 +9,6 @@ import { MoviesStore } from '../../store/movies.store';
 import { urlCombiner, RouteType } from '../../utilities/url-combiner.util';
 import * as idExtracterUtil from '../../utilities/id-extracter.util';
 
-
 @Component({
   selector: 'cmp-character',
   imports: [MatIconModule, MatListModule, MatProgressBarModule],

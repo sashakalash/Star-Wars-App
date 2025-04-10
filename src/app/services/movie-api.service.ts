@@ -23,7 +23,10 @@ export class MovieApiService {
   private readonly http = inject(HttpClient);
 
   getMovies(): Observable<IMovie[]> {
-    return this.http.get<MovieApiResponse>(`${this.apiUrl}/${this.environment.api.getMoviesList}`)
+    return this.http
+      .get<MovieApiResponse>(
+        `${this.apiUrl}/${this.environment.api.getMoviesList}`
+      )
       .pipe(
         map(({ results }) => results),
         catchError(() => of([])) // TODO Implement error catcher
@@ -32,10 +35,11 @@ export class MovieApiService {
 
   getMovieById(url: string): Observable<IMovie> {
     return this.http
-      .get<IMovie>(`${this.apiUrl}/${this.environment.api.getMovieById.replace(
-        '${{id}}',
-        idExtracter(url)
-      )}`
+      .get<IMovie>(
+        `${this.apiUrl}/${this.environment.api.getMovieById.replace(
+          '${{id}}',
+          idExtracter(url)
+        )}`
       )
       .pipe(
         catchError(() => of()) // TODO Implement error catcher
@@ -44,10 +48,11 @@ export class MovieApiService {
 
   getCharacterById(url: string): Observable<ICharacter> {
     return this.http
-      .get<ICharacter>(`${this.apiUrl}/${this.environment.api.getCharacterById.replace(
-        '${{id}}',
-        idExtracter(url)
-      )}`
+      .get<ICharacter>(
+        `${this.apiUrl}/${this.environment.api.getCharacterById.replace(
+          '${{id}}',
+          idExtracter(url)
+        )}`
       )
       .pipe(
         catchError(() => of()) // TODO Implement error catcher

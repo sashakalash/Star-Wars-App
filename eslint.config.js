@@ -89,13 +89,13 @@ module.exports = tseslint.config(
       '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
       '@typescript-eslint/no-this-alias': 'error',
       '@typescript-eslint/no-unused-vars': [
-        "warn",
+        'warn',
         {
-          "vars": "all",
-          "varsIgnorePattern": "^_",
-          "args": "after-used",
-          "argsIgnorePattern": "^_"
-        }
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
       ],
       '@typescript-eslint/prefer-as-const': 'error',
       'no-restricted-imports': [
@@ -201,12 +201,12 @@ module.exports = tseslint.config(
         },
         {
           selector: 'enumMember',
-          format: ['UPPER_CASE']
+          format: ['UPPER_CASE'],
         },
         {
           selector: 'typeProperty',
-          format: ['snake_case', 'camelCase']
-        }
+          format: ['snake_case', 'camelCase'],
+        },
       ],
       '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-empty-interface': 'error',
