@@ -1,0 +1,77 @@
+@let person = character();
+@let movies = charMovies();
+
+@if (loading()) {
+<div class="spinner-container">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+} @else {
+<div class="character-details-container">
+  @if (person) {
+  <div class="character-header">
+    <h1 class="character-name">{{ person.name }}</h1>
+  </div>
+  <div class="character-content">
+    <mat-list>
+      <mat-list-item>
+        <mat-icon matListItemIcon>person</mat-icon>
+        <div matListItemTitle>Birth Year:</div>
+        <div matListItemLine>{{ person.birth_year }}</div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>visibility</mat-icon>
+        <div matListItemTitle>Eye Color:</div>
+        <div matListItemLine>{{ person.eye_color }}</div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>wc</mat-icon>
+        <div matListItemTitle>Gender:</div>
+        <div matListItemLine>{{ person.gender }}</div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>content_cut</mat-icon>
+        <div matListItemTitle>Hair Color:</div>
+        <div matListItemLine>{{ person.hair_color }}</div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>height</mat-icon>
+        <div matListItemTitle>Height:</div>
+        <div matListItemLine>{{ person.height }} cm</div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>fitness_center</mat-icon>
+        <div matListItemTitle>Mass:</div>
+        <div matListItemLine>{{ person.mass }} kg</div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>palette</mat-icon>
+        <div matListItemTitle>Skin Color:</div>
+        <div matListItemLine>{{ person.skin_color}}</div>
+      </mat-list-item>
+      <div class="movies-container">
+        <h2>Movies</h2>
+        @if (isInterLoading()) {
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        }@else {
+        @if (movies) {
+        <mat-list class="movies-list">
+          @for (movie of movies; track movie.url) {
+          <mat-list-item (click)="selectMovie(movie)">
+            <div matListItemTitle>{{ movie.title }}</div>
+          </mat-list-item>
+          } @empty {
+            Oops, it looks movie list is empty.
+          }
+        </mat-list>
+        } @else {
+        Oops, it looks movie list is not available.
+        }
+        }
+      </div>
+    </mat-list>
+  </div>
+  } @else {
+  Oops, it look the character is not found.
+  }
+</div>
+}

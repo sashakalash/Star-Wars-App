@@ -1,0 +1,51 @@
+@let film = movie();
+@let charactres = movieCharacters();
+
+@if (loading()) {
+<div class="spinner-container">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+} @else {
+
+<div class="movie-details-container">
+  @if (film) {
+  <div class="movie-header">
+    <h1 class="movie-title">{{ film.title }}</h1>
+    <div class="movie-info">
+      <p><strong>Producer:</strong> {{ film.producer }}</p>
+      <p><strong>Director:</strong> {{ film.director }}</p>
+      <p><strong>Release Date:</strong> {{ film.release_date | date: 'dd.MM.YYYY' }}</p>
+    </div>
+  </div>
+  <div class="movie-content">
+    <div class="opening-crawl">
+      <h2>Description</h2>
+      <p>{{ film.opening_crawl }}</p>
+    </div>
+    <div class="characters-list">
+      <h2>Characters</h2>
+      @if (isInterLoading()) {
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      } @else {
+        @if (charactres) {
+        <mat-list>
+          @for (character of charactres; track character.url) {
+          <mat-list-item (click)="selectCharacter(character)">
+            <div matListItemTitle>{{ character.name }}</div>
+          </mat-list-item>
+          } @empty {
+          Oops, it looks character list is empty.
+          }
+        </mat-list>
+        } @else {
+        Oops, it looks character list is not available.
+        }
+      }
+    </div>
+  </div>
+  }
+  @else {
+  Oops, it looks this movie is not available.
+  }
+</div>
+}

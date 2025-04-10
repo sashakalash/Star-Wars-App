@@ -1,0 +1,43 @@
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+
+    .movie-card {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+
+      .mat-mdc-card-header {
+        justify-content: center;
+      }
+
+      .mat-mdc-card-title {
+        cursor: pointer;
+        color: #007bff;
+        &:hover {
+          color: #0056b3;
+        }
+      }
+
+      .crawl {
+        text-align: justify;
+      }
+    }
+  }
+}
